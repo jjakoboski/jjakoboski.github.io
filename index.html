@@ -1,191 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julie Jakoboski — Data Delivery & Project Leadership</title>
-  <meta name="description" content="Julie Jakoboski — project director, team lead, and data strategist with 12+ years delivering national-scale environmental observing networks, stakeholder engagement, and data-driven solutions.">
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+  <title>Julie K. Jakoboski — Data Delivery & Technical Project Leadership</title>
+  <meta name="description" content="Julie K. Jakoboski — project director, team lead, and data strategist with 12+ years delivering national-scale ocean observing programs, stakeholder engagement, and data-driven solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🌊</text></svg>">
 </head>
-</head>
-
 <body>
 
   <nav class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#" class="nav__brand">Julie Jakoboski</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+    <div class="nav__inner container">
+      <a href="#home" class="nav__logo">JK</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav__list" id="navList">
-        <li><a href="#impact">Impact</a></li>
-        <li><a href="#featured">Featured</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#media" class="nav__link">Media</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="container hero__inner">
-      <p class="hero__label">Data Visualisation &middot; Ocean Observing &middot; Technical Project Leadership</p>
-      <h1 class="hero__name">Julie Jakoboski</h1>
-      <p class="hero__lead">Delivering national-scale data outcomes, long-term partnerships, and compelling data insights at the intersection of science, technology, and people.</p>
-      <div class="hero__contact">
-        <a href="mailto:jjakobos@alum.mit.edu">jjakobos@alum.mit.edu</a>
-        <span class="hero__sep">&middot;</span>
-        <span>East Coast, USA and Raglan, New Zealand</span>
-      </div>
-      <div class="hero__scroll">
-        <a href="#impact" class="scroll-link">&#8595;</a>
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__subtitle">Data delivery &middot; Environmental monitoring &middot; Technical project management</p>
+      <h1 class="hero__title">Julie Jakoboski</h1>
+      <p class="hero__desc">Delivering national-scale data outcomes, cross-sector partnerships, and actionable insights at the intersection of science, technology, and people.</p>
+      <div class="hero__actions">
+        <a href="moana_nz_dashboard_6.html" class="btn btn--outline">View Moana NZ Dashboard</a>
+        <a href="#portfolio" class="btn btn--outline">View Portfolio</a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
       </div>
     </div>
-  </header>
-
-  <section id="impact" class="section">
-    <div class="container">
-      <h2 class="section__title">Impact at a Glance</h2>
-      <div class="metrics">
-        <div class="metric">
-          <span class="metric__num">National-scale</span>
-          <span class="metric__label">Ocean observing network deployed across Aotearoa New Zealand</span>
-        </div>
-        <div class="metric">
-          <span class="metric__num">Hundreds</span>
-          <span class="metric__label">Of diverse stakeholders engaged from government to industry to local communities</span>
-        </div>
-        <div class="metric">
-          <span class="metric__num">Pioneering</span>
-          <span class="metric__label">Novel sensor program delivered on time and on budget</span>
-        </div>
-        <div class="metric">
-          <span class="metric__num">Closed &rarr; Open</span>
-          <span class="metric__label">Led a successful campaign to transition a culture of closed data to open data</span>
-        </div>
-        <div class="metric">
-          <span class="metric__num">12+ years</span>
-          <span class="metric__label">Delivering measurable impact in oceanography, leadership, and science communication</span>
-        </div>
-        <div class="metric">
-          <span class="metric__num">PhD</span>
-          <span class="metric__label">MIT &amp; WHOI Joint Program in Physical Oceanography</span>
-        </div>
-      </div>
+    <p class="hero__credit">Photo: Brian Nevins</p>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,40 C360,120 720,0 1080,80 C1260,120 1440,40 1440,40 L1440,120 L0,120 Z" fill="var(--bg)"/></svg>
     </div>
   </section>
 
-  <section class="section section--alt" id="impact-areas">
-    <div class="container">
-      <h2 class="section__title">Key Impact Areas</h2>
-
-      <div class="impact-card">
-        <div class="impact-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#0077b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30s6-10 16-10 16 10 16 10"/><path d="M8 36s6-10 16-10 16 10 16 10"/><path d="M8 24s6-10 16-10 16 10"/><circle cx="24" cy="12" r="3"/></svg>
-        </div>
-        <div>
-          <h3 class="impact-card__title">Building Environmental Observing Data Systems</h3>
-          <p class="impact-card__role">Research Team Lead &amp; Oceanographic Data Scientist &middot; MetService NZ &middot; 2019&ndash;2023 &amp; Aotearoa Moana Observing System &middot; 2023&ndash;present</p>
-          <p class="impact-card__desc">Led the co-design and deployment of an industry-leading, crowd-sourced ocean observing network as part of the multi-million-dollar Moana Project. Designed and built real-time data reporting, interactive data visualizations, and geospatial tools making critical oceanographic data accessible to diverse users nationwide: scientists, fishers, iwi, policymakers, and the public.</p>
-          <ul class="impact-card__list">
-            <li>Managed a cross-functional team to co-design, develop, and deploy a novel ocean observing network in partnerships with technology partners and industry</li>
-            <li>Architected the full data pipeline, from raw sensor data through processing to interactive dashboards and published maps, using Python, Python visualization tools, Docker, Spark, Javascript, and geospatial tooling;  Delivered data to ocean forecasting and scientific research teams</li>
-            <li>Co-designed stakeholder-informed dashboards that translated observed, near real-time oceanographic data into clear, actionable information for non-specialist users and transforming raw observations into strategic decision making</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="impact-card">
-        <div class="impact-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#0077b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v36"/><path d="M8 18h32"/><path d="M24 18L16 8"/><path d="M24 18l8-10"/><circle cx="24" cy="24" r="16"/><path d="M14 32c2-3 6-5 10-5s8 2 10 5"/></svg>
-        </div>
-        <div>
-          <h3 class="impact-card__title">Data Visualization &amp; Open Data</h3>
-          <p class="impact-card__role">Research Team Lead &middot; MetService NZ &middot; 2019&ndash;2024</p>
-          <p class="impact-card__desc">Designed the end-to-end data visualization pipeline for a national ocean observing network. Built interactive dashboards and geospatial visualizations that translated raw oceanographic sensor data into intuitive, decision-ready tools for diverse audiences. Led a successful campaign to transition New Zealand's oceanographic community from closed to open data, communicating both the cultural and technical motivations behind the shift.</p>
-          <ul class="impact-card__list">
-            <li>Built the full data-to-dashboard stack: Python-based processing, quality control, geospatial mapping, and Google Looker Studio dashboards</li>
-            <li>Connected with hundreds of stakeholders to motivate a cultural change from closed to open data; encourage data uptake through communication, education, and stakeholder engagement.</li>
-            <li>Created visualizations that served everyone from government scientists to commercial fishers to community users</li>
-            <li>Co-developed indigenous data sovereignty protocols for sharing geospatial environmental data</li>
-            <li>Communicated data insights through scientific papers, conferences, workshops, newsletters, and public-facing dashboards</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="impact-card">
-        <div class="impact-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#0077b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 44V20l16-8 16 8v24"/><path d="M8 28l16-8 16 8"/><path d="M16 44V32l8-4 8 4v12"/></svg>
-        </div>
-        <div>
-          <h3 class="impact-card__title">Leading Teams &amp; Strategy</h3>
-          <p class="impact-card__role">Project Manager &amp; Program Lead, MetService NZ &amp; Aotearoa Moana Observing System &middot; 2023&ndash;present</p>
-          <p class="impact-card__desc">Delivered the final phase of the nation-wide Moana Project, ensuring budget compliance and timely completion by monitoring finances, risks, and timelines. Currently co-coordinating the transition of a novel ocean observing system from MetService to an independent non-profit trust, including all stakeholder relationships and communications strategy. Founding member of an international ocean observing steering committee.</p>
-          <ul class="impact-card__list">
-            <li>Delivered the $11.5 million dollar program's Benefits &amp; Impacts report through extensive communication with hundreds of diverse stakeholders</li>
-            <li>Co-managed media relationships and strategy with the communications team</li>
-            <li>Mentored and trained students and interns in oceanographic data science and stakeholder engagement</li>
-            <li>Represented the program at international science and industry conferences, symposiums, and workshops</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="featured" class="section">
-    <div class="container">
-      <h2 class="section__title">Featured Project</h2>
-
-      <div class="featured">
-        <div class="featured__header">
-          <h3 class="featured__title">The Moana Project</h3>
-          <span class="featured__tag">National-scale ocean observing</span>
-        </div>
-        <div class="featured__meta">
-          <span><strong>Role:</strong> Research Team Lead &rarr; Project Manager</span>
-          <span><strong>Duration:</strong> 2019&ndash;2024</span>
-          <span><strong>Location:</strong> Aotearoa New Zealand</span>
-        </div>
-        <p>A multi-million-dollar program that designed, built, and deployed a nationwide crowd-sourced ocean observing network. The Te Tiro Moana ("Eyes on the Ocean") theme of the project transformed how New Zealand collects, shares, and uses ocean data, shifting from a closed-data culture to open data, engaging hundreds of stakeholders across sectors, increasing the number of research-quality, subsurface ocean temperature observations by 40x, and delivering real-time environmental intelligence to the entire country.</p>
-
-        <div class="featured__viz">
-          <img src="images/moana-observing-map-3yr.png" alt="Map of the Moana Project ocean observing network across Aotearoa New Zealand over three years" loading="lazy" />
-          <p class="featured__caption">The Moana observing network; a subset of three years of crowd-sourced ocean data collection across Aotearoa New Zealand (<a href="https://doi.org/10.1016/j.pocean.2024.103278.">Jakoboski et. al., 2024</a>). Every dot represents sensor deployments that feed into real-time dashboards and visualizations.</p>
-        </div>
-
-        <div class="featured__highlights">
-          <div class="featured__highlight">
-            <h4>&#9733; Data Viz Stack</h4>
-            <p><strong>Python, Spark, Docker</strong> for processing &amp; QC, <strong>HTML, Javascript, Power BI</strong> for interactive dashboards, <strong>geospatial tooling</strong> for mapping. End-to-end pipeline from raw sensor data to public-facing visualizations.</p>
-          </div>
-          <div class="featured__highlight featured__highlight--link">
-            <h4>&#9733; Live Dashboard</h4>
-            <p><a href="moana_nz_dashboard_6.html" target="_blank">Explore the Moana observing network dashboard &rarr;</a></p>
-          </div>
-          <div class="featured__highlight">
-            <h4>&#9733; Impact</h4>
-            <p>A national observing network delivering open ocean data to government, industry, researchers, and communities.</p>
-          </div>
-          <div class="featured__highlight">
-            <h4>&#9733; Approach</h4>
-            <p>Extensive stakeholder co-design, indigenous data sovereignty partnerships, and a strategic shift to open-data infrastructure.</p>
-          </div>
-          <div class="featured__highlight">
-            <h4>&#9733; Reach</h4>
-            <p>Hundreds of stakeholders engaged, national media coverage, international conference presentations, and founding membership on a global ocean observing steering committee.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="about" class="section section--alt">
+  <section class="about" id="about">
     <div class="container">
       <h2 class="section__title">About</h2>
       <div class="about__grid">
@@ -193,89 +55,316 @@
           <p>Data scientist, program director, and project lead with 18+ years delivering measurable impact in oceanography, research project leadership, science communication, and stakeholder engagement.</p>
           <p>Led the co-design and deployment of a nationwide, crowd-sourced ocean observing network across Aotearoa New Zealand, including genuine stakeholder co-design, open data advocacy, and data delivery for diverse users locally and internationally.</p>
           <p>Utilizes a MIT/WHOI Ph.D.-level analytical approach combined with practical, hands-on experience and clear, effective communication to drive program delivery and stakeholder strategy. Invests in building long-term partnerships across industry, government, and community lines.</p>
-          <div class="about__cta">
-            <a href="mailto:jjakobos@alum.mit.edu" class="btn">Contact</a>
+
+          <div class="about__details">
+            <div class="detail">
+              <span class="detail__label">Location</span>
+              <span class="detail__value">East Coast USA</span>
+            </div>
+            <div class="detail">
+              <span class="detail__label">Email</span>
+              <span class="detail__value"><a href="mailto:jjakobos@alum.mit.edu">jjakobos@alum.mit.edu</a></span>
+            </div>
+            <div class="detail">
+              <span class="detail__label">GitHub</span>
+              <span class="detail__value"><a href="https://github.com/jjakoboski" target="_blank" rel="noopener">github.com/jjakoboski</a></span>
+            </div>
           </div>
         </div>
-        <aside class="about__aside">
-          <div class="about__block">
-            <h4>Education</h4>
-            <p><strong>Ph.D.</strong>, Physical Oceanography<br/>MIT &amp; WHOI Joint Program &middot; 2019</p>
-            <p><strong>B.S.</strong>, Mechanical Engineering, <br/><strong>B.A.</strong>, Physics <br/><em>magna cum laude</em><br/>Bucknell University &middot; 2007</p>
-          </div>
-          <div class="about__block">
-            <h4>Earlier</h4>
-            <p><strong>Instrument Mechanical Engineer</strong><br/>NASA Jet Propulsion Laboratory<br/>Designed advanced instrumentation for space exploration under NASA standards.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section__title">Skills &amp; Tools</h2>
+        <div class="about__skills">
+          <h3>Core Competencies</h3>
           <div class="skills__grid">
             <span class="skill-tag">Stakeholder Engagement</span>
             <span class="skill-tag">Data Visualization</span>
-            <span class="skill-tag">Data Pipelines and Modeling</span>
-            <span class="skill-tag">Program Strategy</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Git</span>
-            <span class="skill-tag">Spark</span>
             <span class="skill-tag">Jira</span>
             <span class="skill-tag">Cross-functional Leadership</span>
             <span class="skill-tag">Cross-cultural Communication</span>
             <span class="skill-tag">Open Data Practices</span>
             <span class="skill-tag">Technical Writing</span>
             <span class="skill-tag">Physical Oceanography</span>
-            <span class="skill-tag">Environmental Observing Systems</span>
+            <span class="skill-tag">Ocean Observing Systems</span>
             <span class="skill-tag">Mechanical Engineering</span>
             <span class="skill-tag">Project Budgeting &amp; Risk</span>
-            <span class="skill-tag">Science and Technical Communication</span>
+            <span class="skill-tag">Science Communication</span>
           </div>
-    </div>
-  </section>
 
-  <section id="interests" class="section section--alt">
-    <div class="container">
-      <h2 class="section__title">Beyond the Work</h2>
-      <div class="interests__wrap">
-        <div class="interests__text">
-          <p class="interests__intro">I spent as much time outdoors as I can outside of work, including through surfing, trail running, cycling, and open water swimming.</p>
-          <p class="interests__intro">I also enjoy mentoring STEM students, community outreach, and coaching Girls on the Run, while also finding time to play flute in local ensembles.</p>
+          <h3 style="margin-top: 28px;">Education &amp; Languages</h3>
+          <div class="about__edu">
+            <p><strong>Ph.D., Physical Oceanography</strong> — MIT &amp; WHOI Joint Program</p>
+            <p><strong>B.S. Mechanical Engineering, B.A. Physics</strong> — Bucknell University, magna cum laude</p>
+            <p style="margin-top:8px;"><strong>Languages:</strong> English (native), Spanish (advanced), Te Reo Māori (intermediate)</p>
+          </div>
         </div>
-        <figure class="interests__photo">
-          <img src="Julie_surf_by_brian_nevins.jpg" alt="Julie surfing" loading="lazy" />
-          <figcaption>Photo &copy; Brian Nevins</figcaption>
-        </figure>
+      </div>
+      <div class="about-impact">
+        <div class="impact-card">
+          <span class="impact-number">250+</span>
+          <span class="impact-label">Fishing vessels equipped with novel sensors</span>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">40x</span>
+          <span class="impact-label">Available Subsurface Ocean Observations</span>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">18+</span>
+          <span class="impact-label">Years in ocean science &amp; engineering</span>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">Technical Project</span>
+          <span class="impact-label">management &amp; delivery</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer" id="contact">
-    <div class="container footer__inner">
-      <h3 class="footer__name">Julie Jakoboski</h3>
-      <div class="footer__links">
-        <a href="mailto:jjakobos@alum.mit.edu">jjakobos@alum.mit.edu</a>
-        <span>&middot;</span>
-        <span>East Coast USA</span>
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="section__title">Portfolio</h2>
+      <p class="section__desc">Selected programs and initiatives at the intersection of data, technology, stakeholder strategy, and operational impact.</p>
+      <div class="portfolio__grid">
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Data Delivery</span>
+            <h3 class="card__title">Mangōpare Sensor Program</h3>
+            <p class="card__text">Delivered a nationwide ocean observing network in partnership with the commercial fishing sector, deploying 300+ sensors on fishing vessels. Built interactive dashboards and data visualisations translating millions of subsurface temperature observations into operational intelligence for science, industry, iwi, and policy audiences.</p>
+            <div class="card__meta">
+              <span>Python &middot; QGIS &middot; Jupyter &middot; Power BI</span>
+            </div>
+            <div class="card__links">
+              <a href="https://www.moanaproject.org/temperature-sensors" target="_blank" rel="noopener" class="card__link">Project Site &rarr;</a>
+              <a href="https://github.com/jjakoboski/moana-qc" target="_blank" rel="noopener" class="card__link">Code &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Leadership</span>
+            <h3 class="card__title">Open Data Transition</h3>
+            <p class="card__text">Led a multi-year culture shift from closed to open data across a national research program, developing data-sharing frameworks that balanced technical standards with indigenous data sovereignty principles. Negotiated buy-in from 300+ fishing vessel operators and multiple industry bodies to make proprietary data publicly accessible.</p>
+            <div class="card__meta">
+              <span>Stakeholder Engagement &middot; Policy &middot; Traditional Knowledge</span>
+            </div>
+            <div class="card__links">
+              <a href="https://www.moanaproject.org/" target="_blank" rel="noopener" class="card__link">Program Site &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Instrument Engineering</span>
+            <h3 class="card__title">NASA Jet Propulsion Laboratory</h3>
+            <p class="card__text">Instrument mechanical engineer on multiple spaceflight missions, including the Juno Microwave Radiometer. Designed and delivered advanced scientific instrumentation under NASA standards and rigorous quality assurance. Collaborated across multi-disciplinary engineering teams to meet performance requirements within budget and schedule constraints.</p>
+            <div class="card__meta">
+              <span>Mechanical Engineering &middot; Systems Engineering &middot; NASA</span>
+            </div>
+            <div class="card__links">
+              <a href="https://www.jpl.nasa.gov/" target="_blank" rel="noopener" class="card__link">JPL &rarr;</a>
+              <a href="https://www.youtube.com/watch?v=iakQRb3e0Zg" target="_blank" rel="noopener" class="card__link">Video &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Technical Project Management</span>
+            <h3 class="card__title">Aotearoa Moana Observing System</h3>
+            <p class="card__text">Co-leading the transition of a nationally significant ocean observing system from government service delivery to an independent charitable trust. Managing stakeholder relationships, funding strategy, governance design, and communications to secure the long-term operational future of the sensor network.</p>
+            <div class="card__meta">
+              <span>Strategy &middot; Governance &middot; Stakeholder Comms</span>
+            </div>
+            <div class="card__links">
+              <a href="https:www.amos.org.nz" target="_blank" rel="noopener" class="card__link">AMOS Website &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Research</span>
+            <h3 class="card__title">Physical Oceanography Research</h3>
+            <p class="card__text">Doctoral research at the MIT-WHOI Joint Program using autonomous underwater gliders to study ocean circulation and upwelling dynamics. Published in peer-reviewed journals. Led international field campaigns and collaborated across oceanographic institutions. Analytical foundation that underpins all subsequent data and observation program delivery.</p>
+            <div class="card__meta">
+              <span>MIT &middot; WHOI &middot; Physical Oceanography</span>
+            </div>
+            <div class="card__links">
+              <a href="https://www.researchgate.net/profile/J-K-Jakoboski" target="_blank" rel="noopener" class="card__link">Publications &rarr;</a>
+              <a href="https://theconversation.com/profiles/julie-jakoboski-1417491" target="_blank" rel="noopener" class="card__link">The Conversation &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <span class="card__tag">Education</span>
+            <h3 class="card__title">Science and Technology Outreach</h3>
+            <p class="card__text">Designed and delivered hands-on data curriculum for secondary school students using real-world data. Developed Jupyter-based exercises that build data literacy and analytical skills through authentic scientific datasets.</p>
+            <div class="card__meta">
+              <span>Jupyter &middot; Python &middot; Curriculum Design</span>
+            </div>
+            <div class="card__links">
+              <a href="https://github.com/jjakoboski/ocean_mapping_class_activity" target="_blank" rel="noopener" class="card__link">GitHub &rarr;</a>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <p class="footer__copy">&copy; 2026 Julie Jakoboski</p>
+    </div>
+  </section>
+
+  <section class="media" id="media">
+    <div class="container">
+      <h2 class="section__title">Media</h2>
+      <p class="section__desc">Press, podcasts, and feature coverage spanning ocean observing, data innovation, and multi-stakeholder program delivery.</p>
+      <div class="media__grid">
+
+        <a href="https://theconversation.com/fishing-for-data-commercial-fishers-help-monitor-rising-temperatures-in-coastal-seas-202115" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://images.theconversation.com/files/517148/original/file-20230323-24-zruol1.jpg?ixlib=rb-4.1.0&rect=0%2C544%2C7557%2C3778&q=45&auto=format&w=1356&h=668&fit=crop" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Fishing for Data: Commercial Fishers Help Monitor Rising Temperatures in Coastal Seas</h3>
+            <p class="media__outlet">The Conversation</p>
+            <p class="media__date">March 2023</p>
+          </div>
+        </a>
+
+        <a href="https://eos.org/science-updates/the-moana-project-braids-tradition-and-science-for-a-more-sustainable-ocean" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://eos.org/wp-content/uploads/2024/05/ocean-temperature-sensor-fish-net.jpg" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">The Moana Project Braids Tradition and Science for a More Sustainable Ocean</h3>
+            <p class="media__outlet">Eos (AGU)</p>
+            <p class="media__date">May 2024</p>
+          </div>
+        </a>
+
+        <a href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2023.1322194/full" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=400&q=80" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Frontiers in Marine Science: Ocean Observations from Fishing Vessels</h3>
+            <p class="media__outlet">Frontiers in Marine Science</p>
+            <p class="media__date">2023</p>
+          </div>
+        </a>
+
+        <a href="https://www.nzherald.co.nz/nz/mega-project-yields-insights-about-nzs-changing-oceans/HNX4GWOMQ2BYAVNFIL4S4PTKSM/" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://www.nzherald.co.nz/resizer/v2/VE54MRSU6NYZFX433WB6LC33JU.jpg?auth=5b28ca249c3c48d7265bec86964d7fceb3e97ab8c4d5d36b0d2dc321640d929f&width=1200&height=675&quality=70&smart=true" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Mega-project Yields Insights about New Zealand's Changing Oceans</h3>
+            <p class="media__outlet">New Zealand Herald</p>
+            <p class="media__date">October 2022</p>
+          </div>
+        </a>
+
+        <a href="https://www.nzherald.co.nz/business/companies/freight-logistics/115m-mega-project-to-shed-light-on-nzs-changing-oceans/J2PBU7576LOGXL4VD6CAKSYM7A/" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://www.nzherald.co.nz/resizer/v2/TY22A5NGVPUFEADMDE2WEZZYPE.jpg?auth=9c815a25163034729e8ae7070db1a923655fe50125d0d84b9958448e4522a1a3&width=1200&height=675&quality=70&smart=true" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">$11.5m Mega-project to Shed Light on New Zealand's Changing Oceans</h3>
+            <p class="media__outlet">New Zealand Herald</p>
+            <p class="media__date">April 2020</p>
+          </div>
+        </a>
+
+        <a href="https://www.mbie.govt.nz/science-and-technology/science-and-innovation/news-success-stories/success-stories/ocean-observation-project-takes-new-zealand-from-world-trailing-to-world-leading" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=400&q=80" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Ocean Observation Project Takes New Zealand from World-Trailing to World-Leading</h3>
+            <p class="media__outlet">MBIE</p>
+            <p class="media__date">2020</p>
+          </div>
+        </a>
+
+        <a href="https://www.seafood.co.nz/news-and-events/news/detail/new-zealand-fishers-agree-to-share-moana-project-sensor-data" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://www.seafood.co.nz/fileadmin/_processed_/7/5/csm_SNZ_TheUpdate_Social-Web-Tile_Bouy_1200x800_82c190d96b.jpg" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">New Zealand Fishers Agree to Share Moana Project Sensor Data</h3>
+            <p class="media__outlet">Seafood New Zealand</p>
+            <p class="media__date">2023</p>
+          </div>
+        </a>
+
+        <a href="https://mag.hookandnet.com/2023/11/06/2023-11moanaa/content.html" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://mag.hookandnet.com/pp-thumb-5a0ad4907c3b83e2c9bd23bb376da9d5-1699544516.jpg" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Gaining Insights into Environmental Changes</h3>
+            <p class="media__outlet">Hook and Net Magazine</p>
+            <p class="media__date">November 2023</p>
+          </div>
+        </a>
+
+        <a href="https://seachangepod.podbean.com/e/the-moana-project-part-one-with-julie-jakoboski/" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=400&q=80" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">The Moana Project (part one) with Julie Jakoboski</h3>
+            <p class="media__outlet">Sea Change Podcast</p>
+            <p class="media__date">July 2022</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=kIi5_cN1OlE" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://img.youtube.com/vi/kIi5_cN1OlE/0.jpg" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">The Moana Project's Te Tiro Moana (Eyes on the Sea) &mdash; Lightning Talk</h3>
+            <p class="media__outlet">UNH/CCOM Seminar Series</p>
+            <p class="media__date">October 2020</p>
+          </div>
+        </a>
+
+        <a href="https://echo360.org/media/1cb64dc0-693e-4611-b97f-aaab4a6896de/public" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=400&q=80" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Crowd Sourcing Ocean Observations Using New Technology in Partnership with the Fishing Sector</h3>
+            <p class="media__outlet">UMASS Joint DEOS/SFO Seminar</p>
+            <p class="media__date">November 2022</p>
+          </div>
+        </a>
+
+        <a href="https://archive.org/details/julie-j-interview-26-10-22" target="_blank" rel="noopener" class="media__card">
+          <div class="media__thumb"><img src="https://archive.org/services/img/julie-j-interview-26-10-22/full/pct:500/0/default.jpg" alt=""></div>
+          <div class="media__info">
+            <h3 class="media__title">Radio Interview: Ocean Observations and the Moana Project</h3>
+            <p class="media__outlet">Over the Fence Radio Show</p>
+            <p class="media__date">October 2022</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <h2 class="section__title section__title--light">Get in Touch</h2>
+        <div class="contact__methods">
+          <a href="mailto:jjakobos@alum.mit.edu" class="contact__card">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>jjakobos@alum.mit.edu</span>
+          </a>
+          <a href="https://github.com/jjakoboski" target="_blank" rel="noopener" class="contact__card">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>github.com/jjakoboski</span>
+          </a>
+          <a href="https://www.linkedin.com/in/julie-jakoboski-276776281/" target="_blank" rel="noopener" class="contact__card">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>Julie Jakoboski on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p>&copy; 2026 Julie Jakoboski. All rights reserved.</p>
+        <p class="footer__tagline">Data strategy &middot; Program delivery &middot; Cross-sector leadership</p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const list = document.getElementById('navList');
-    toggle.addEventListener('click', () => {
-      list.classList.toggle('nav__list--open');
-    });
-    document.querySelectorAll('.nav__list a').forEach(link => {
-      link.addEventListener('click', () => {
-        list.classList.remove('nav__list--open');
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
