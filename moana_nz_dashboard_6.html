@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AMOS — NZ Sea Temperature Dashboard</title>
+<title>Moana Project — NZ Sea Temperature Dashboard</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -166,8 +166,8 @@ td{padding:8px 13px}
 
 <header>
   <div class="hbrand">
-    <h1>AMOS <span>Sea Temperature</span> Dashboard</h1>
-    <p>Mangōpare Sensor Network &nbsp;·&nbsp; 2023-10-14 – 2026-06-17 &nbsp;·&nbsp; 168.0°E – 178.4°E, 36.1°S – 48.9°S &nbsp;·&nbsp;
+    <h1>Moana Project <span>Sea Temperature</span> Dashboard</h1>
+    <p>MOANA Sensor Network &nbsp;·&nbsp; 2023-10-14 – 2026-06-17 &nbsp;·&nbsp; 168.0°E – 178.4°E, 36.1°S – 48.9°S &nbsp;·&nbsp;
       <span class="qct"><span class="qcd"></span> QC Verified · 21882 Deployments</span>
     </p>
   </div>
@@ -220,7 +220,7 @@ td{padding:8px 13px}
       <div class="sbp sp"><div class="spL">Surface</div><div class="spV" id="sbS">—</div></div>
       <div class="sbp bp"><div class="spL">Bottom</div><div class="spV" id="sbBt">—</div></div>
       <div class="sbp np"><div class="spL">Deployments</div><div class="spV" id="sbDp">—</div></div>
-      <div class="sbp np"><div class="spL">Location</div><div class="spV" id="sbLc" style="font-size:.85rem">—</div></div>
+      <div class="sbp np"><div class="spL">Fleet N–S span</div><div class="spV" id="sbLc" style="font-size:.85rem">—</div></div>
     </div>
   </div>
 
@@ -247,6 +247,18 @@ td{padding:8px 13px}
       <canvas id="tsChart"></canvas>
       <div class="zoom-hint" id="zoomHint">Scroll to zoom &nbsp;·&nbsp; Drag to pan &nbsp;·&nbsp; Double-click to reset</div>
     </div>
+  </div>
+
+  <!-- Deployments over time -->
+  <div class="cc">
+    <div class="ch">
+      <div class="ct">Daily Deployments <small>Number of sensor deployments per day · zoom and pan synced with temperature chart above</small></div>
+      <div class="lr">
+        <div class="leg"><div class="ld" style="background:rgba(0,200,255,.5)"></div>All days</div>
+        <div class="leg"><div class="ld" style="background:var(--sel);width:8px;height:8px;border-radius:2px"></div>Selected day</div>
+      </div>
+    </div>
+    <div style="position:relative;height:130px"><canvas id="depCountChart"></canvas></div>
   </div>
 
   <!-- Map + Monthly -->
@@ -370,33 +382,37 @@ var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 var yearLinePlugin={
   id:'yearLines',
   afterDraw:function(chart){
-    if(chart.canvas.id!=='tsChart') return;
+    var isTs=chart.canvas.id==='tsChart';
+    var isDep=chart.canvas.id==='depCountChart';
+    if(!isTs&&!isDep) return;
     var ctx=chart.ctx, xA=chart.scales.x, yA=chart.scales.y;
     ctx.save();
     var firstYear=dateFromOffset(0).getUTCFullYear();
     var lastYear=dateFromOffset(TOTAL_DAYS).getUTCFullYear();
     for(var yr=firstYear; yr<=lastYear+1; yr++){
-      var off=offsetForYMD(yr,0,1); /* exact 1 Jan — true calendar time */
+      var off=offsetForYMD(yr,0,1);
       var px;
       try{ px=xA.getPixelForValue(off); }catch(e){ continue; }
       if(px<xA.left-1||px>xA.right+1) continue;
 
-      /* dashed vertical rule */
+      /* dashed vertical rule — same on both charts */
       ctx.strokeStyle='rgba(220,240,255,0.18)';
       ctx.lineWidth=1;
       ctx.setLineDash([5,5]);
       ctx.beginPath(); ctx.moveTo(px,yA.top); ctx.lineTo(px,yA.bottom); ctx.stroke();
 
-      /* year badge */
-      ctx.setLineDash([]);
-      ctx.font='bold 11px "Segoe UI",sans-serif';
-      ctx.textAlign='left';
-      var yrLabel=String(yr);
-      var tw=ctx.measureText(yrLabel).width+8;
-      ctx.fillStyle='rgba(8,20,31,0.75)';
-      ctx.fillRect(px+3,yA.top+3,tw,16);
-      ctx.fillStyle='rgba(210,235,255,0.70)';
-      ctx.fillText(yrLabel,px+7,yA.top+15);
+      /* year badge — only on the temperature chart (depCountChart is too short) */
+      if(isTs){
+        ctx.setLineDash([]);
+        ctx.font='bold 11px "Segoe UI",sans-serif';
+        ctx.textAlign='left';
+        var yrLabel=String(yr);
+        var tw=ctx.measureText(yrLabel).width+8;
+        ctx.fillStyle='rgba(8,20,31,0.75)';
+        ctx.fillRect(px+3,yA.top+3,tw,16);
+        ctx.fillStyle='rgba(210,235,255,0.70)';
+        ctx.fillText(yrLabel,px+7,yA.top+15);
+      }
     }
     ctx.restore();
   }
@@ -409,7 +425,8 @@ Chart.register(yearLinePlugin);
 var customXTicksPlugin={
   id:'customXTicks',
   afterBuildTicks:function(chart,args){
-    if(chart.canvas.id!=='tsChart'||args.scale.id!=='x') return;
+    var id=chart.canvas.id;
+    if((id!=='tsChart'&&id!=='depCountChart')||args.scale.id!=='x') return;
     var axis=args.scale;
     var lo=axis.min, hi=axis.max, range=hi-lo;
     var offs=[];
@@ -445,6 +462,28 @@ var customXTicksPlugin={
   }
 };
 Chart.register(customXTicksPlugin);
+
+/* Equalise the left edge of both chart plot-areas so their x-axes align
+   pixel-perfectly. Called once after both charts are built, and again
+   after every zoom (y-axis labels don't change width when zooming, so
+   one post-init sync is usually stable, but re-syncing on zoom is free). */
+function syncChartLeftPadding(){
+  if(!tsChart||!depCountChart) return;
+  /* reset first so we measure from a clean baseline */
+  tsChart.options.layout.padding.left=0;
+  depCountChart.options.layout.padding.left=0;
+  tsChart.update('none');
+  depCountChart.update('none');
+  var tsLeft=tsChart.chartArea.left;
+  var dcLeft=depCountChart.chartArea.left;
+  if(tsLeft>dcLeft){
+    depCountChart.options.layout.padding.left=tsLeft-dcLeft;
+    depCountChart.update('none');
+  } else if(dcLeft>tsLeft){
+    tsChart.options.layout.padding.left=dcLeft-tsLeft;
+    tsChart.update('none');
+  }
+}
 
 /* ── Time-series chart ──────────────────────────── */
 var showMA=false, tsChart, mnChart, selectedDate=null;
@@ -568,6 +607,12 @@ function applyZoom(s,e){
   tsChart.options.scales.x.min=s;
   tsChart.options.scales.x.max=e;
   tsChart.update('none');
+  if(depCountChart){
+    depCountChart.options.scales.x.min=s;
+    depCountChart.options.scales.x.max=e;
+    depCountChart.update('none');
+  }
+  syncChartLeftPadding();
   var isZoomed=(s>0.5||e<TOTAL_DAYS-0.5);
   document.getElementById('rzBtn').style.display=isZoomed?'':'none';
 }
@@ -639,7 +684,77 @@ var wasDrag=false, panAnchor=null;
   },{passive:true});
 })();
 
-/* ── Monthly climatology ────────────────────────── */
+/* ── Daily deployments count chart ───────────────── */
+var depCountChart;
+(function buildDepCount(){
+  var data=DAILY.map(function(d,i){return{x:DAY_OFF[i],y:d.n_deployments};});
+  var ctx=document.getElementById('depCountChart').getContext('2d');
+  depCountChart=new Chart(ctx,{
+    type:'bar',
+    data:{
+      datasets:[
+        {label:'Deployments',data:data,
+          backgroundColor:'rgba(0,200,255,0.28)',
+          borderColor:'rgba(0,200,255,0.5)',
+          borderWidth:0.5,
+          barPercentage:1.0,categoryPercentage:1.0},
+        {label:'Selected',data:[],
+          backgroundColor:'rgba(255,215,0,0.85)',
+          borderColor:'#FFD700',
+          borderWidth:1,
+          barPercentage:1.0,categoryPercentage:1.0}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,animation:{duration:0},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'#0E2233',borderColor:'#1B3F5B',borderWidth:1,
+          titleColor:'#DFF1FC',bodyColor:'#6B9AB4',
+          callbacks:{
+            title:function(items){return fmtDateObj(dateFromOffset(items[0].parsed.x));},
+            label:function(item){return ' '+item.parsed.y+' deployment'+(item.parsed.y!==1?'s':'');}
+          }
+        }
+      },
+      scales:{
+        x:{type:'linear',min:zs.start,max:zs.end,
+           grid:{color:'rgba(27,63,91,.45)',lineWidth:.5},
+           border:{color:'#1B3F5B'},
+           ticks:{color:'#3B6A88',font:{size:10},maxRotation:0,
+             autoSkip:false,
+             callback:function(val){
+               /* same adaptive labels as tsChart — month or month+day */
+               var range=this.max-this.min;
+               var dt=dateFromOffset(val);
+               return range>300?MO[dt.getUTCMonth()]:(MO[dt.getUTCMonth()]+' '+dt.getUTCDate());
+             }
+           }
+        },
+        y:{min:0,
+           grid:{color:'rgba(27,63,91,.45)',lineWidth:.5},
+           border:{color:'#1B3F5B'},
+           ticks:{color:'#3B6A88',font:{size:10},
+             callback:function(v){return Number.isInteger(v)?v:'';}
+           }
+        }
+      }
+    }
+  });
+})();
+/* Align left edges of both chart plot-areas once both are rendered */
+setTimeout(syncChartLeftPadding, 50);
+
+function highlightDepCount(dateStr){
+  if(!depCountChart) return;
+  var idx=DAILY.findIndex(function(d){return d.date===dateStr;});
+  if(idx<0){depCountChart.data.datasets[1].data=[];depCountChart.update('none');return;}
+  depCountChart.data.datasets[1].data=[{x:DAY_OFF[idx],y:DAILY[idx].n_deployments}];
+  depCountChart.update('none');
+}
+
+
 (function(){
   var ms=Array.from({length:12},function(){return{s:[],b:[]};});
   DAILY.forEach(function(d){
@@ -790,8 +905,18 @@ function applyFromData(d){
   document.getElementById('sbS').textContent=f1(d.surface_temp)+'°C';
   document.getElementById('sbBt').textContent=f1(d.bottom_temp)+'°C';
   document.getElementById('sbDp').textContent=d.n_deployments;
-  document.getElementById('sbLc').textContent=Math.abs(d.lat).toFixed(3)+'°S, '+d.lon.toFixed(3)+'°E';
-  highlightTS(d.date); highlightMap(d.date);
+  var dDeps=DEPS.filter(function(x){return x.date===d.date;});
+  if(dDeps.length){
+    var lats=dDeps.map(function(x){return x.lat;});
+    var latN=Math.abs(Math.max.apply(null,lats)).toFixed(1);  /* northernmost (smallest abs) */
+    var latS=Math.abs(Math.min.apply(null,lats)).toFixed(1);  /* southernmost (largest abs) */
+    document.getElementById('sbLc').textContent=
+      latN===latS ? latN+'°S ('+dDeps.length+' sensor'+(dDeps.length!==1?'s':'')+')'
+                  : latN+'°S – '+latS+'°S ('+dDeps.length+' sensors, N–S spread)';
+  } else {
+    document.getElementById('sbLc').textContent='—';
+  }
+  highlightTS(d.date); highlightMap(d.date); highlightDepCount(d.date);
   updateMonthlySelected(d.date, d.surface_temp, d.bottom_temp);
   showProfileSection(d.date, d.surface_temp, d.bottom_temp);
 }
@@ -817,6 +942,7 @@ function clearSearch(){
   document.getElementById('selB').classList.remove('on');
   document.getElementById('noD').classList.remove('on');
   tsChart.data.datasets[4].data=[]; tsChart.update('none');
+  if(depCountChart){depCountChart.data.datasets[1].data=[];depCountChart.update('none');}
   selLyr.clearLayers();
   restoreBaseMarkers();
   leafMap.flyToBounds([[-48.93,167.99],[-36.11,178.4]],{duration:.8});
